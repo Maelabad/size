@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Home page</title>
+</head>
+<body>
+
+    <div class="nav">
+        {% include 'navbar.html' %}
+    </div>
+
+    <div class="corps">
+        <div class="intro">
+            Bienvenue sur notre site qui vous donnera les tailles de vetements qui sont adaptes pour vous.
+        </div>
+        <div class="menu">
+            <div class="pant">
+                <a href="forms/pantalon/"><img src="{% static 'images/pa.png' %}" alt=""></a>
+                <h3>
+                    Pour pourrez determiner votre taille de pantalon en fonction de votre tour de taille et de votre tour de hanches.
+                </h3>
+            </div>
+
+            <div class="tee">
+                <a href="forms/tee_shirt/"><img src="{% static 'images/tee-s.png' %}" alt=""></a>
+                <h3>
+                    Pour pourrez determiner votre taille de pantalon en fonction de votre tour de taille et de votre tour de hanches.
+                </h3>
+            </div>
+
+            <div class="chaus">
+                <a href="forms/chaussures/"><img src="{% static 'images/chauss.jpg' %}" alt=""></a>
+                <h3>
+                    Pour pourrez determiner votre taille de pantalon en fonction de votre tour de taille et de votre tour de hanches.
+                </h3>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</body>
+</html>

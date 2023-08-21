@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chaussures</title>
+    <link rel="stylesheet" href="{% static 'css/styleform.css' %}">
+</head>
+<body>
+    <div class="nav">
+        {% include 'navbar.html' %}
+    </div>
+
+    <form action="../../res/response/" method="post">
+        {% csrf_token %}
+        <div class="input-container ic1">
+          <input id="tChaussures" class="input" type="number" name="tchaussures" placeholder=" " min="8.5" max="32.4"/>
+          <div class="cut"></div>
+          <label for="tChaussures" class="placeholder">Tailles des chaussures (cm)</label>
+        </div>
+
+        <div class="input-container ic2">
+
+            <label for="gender">Genre : </label>
+
+            <span class="first">
+                <input id="homme" type="radio" name="genre" value="M"><label for="homme">Homme</label>
+            </span>
+
+            <span class="second">
+                <input id="femme" type="radio" name="genre" value="F"><label for="femme">Femme</label>
+            </span>
+          <div class="cut cut-short"></div>
+
+        </div>
+        <button type="submit" class="submit">Valider</button>
+    </form>
+
+
+</body>
+</html>
