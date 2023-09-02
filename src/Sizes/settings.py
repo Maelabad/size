@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'y-dh$azjvao-(2)xl$h2=vg7^noh^!^s5e9tuo*zqwn&zch%w#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -74,15 +76,18 @@ WSGI_APPLICATION = 'Sizes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-"""
 
+DATABASES['default'] = dj_database_url.parse("postgres://sizedb_user:AO2NbNhH9OIUOFrNKzQy9qWDY6pYHbNa@dpg-cjhnu9r37aks739hj5lg-a.oregon-postgres.render.com/sizedb")
+
+
+
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -93,7 +98,7 @@ DATABASES = {
         'PORT': 5432
     }
 }
-
+"""
 
 
 # Password validation
