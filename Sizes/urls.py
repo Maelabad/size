@@ -18,11 +18,12 @@ from django.urls import path, include
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from Sizes.views import homePage
+from Sizes.views import homePage, contact
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homePage, name="Home Page"),
+    path('service_client', contact, name="Contact Page"),
     path('res/', include("res.urls")),
     path('forms/', include("forms.urls")),
 ]
