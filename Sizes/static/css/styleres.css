@@ -1,27 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-
-body{
+body {
     background-image: url("../images/background2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0; /* Supprimez la marge pour éviter le débordement horizontal */
+    overflow-x: hidden; /* Cache la barre de défilement horizontale si nécessaire */
 }
 
-.navig{
+.navig {
     background-color: black;
     height: 60px;
     width: 100%;
-    font-color: white;
-    margin-top: 0px;
+    color: white; /* Remplacez "font-color" par "color" */
+    margin: 0;
 }
 
-.res{
-    height: 170px;
-    width: 600px;
-    margin-top: 160px;
-    align-items: center;
-    margin-left: 250px;
+.res {
+    max-width: 100%; /* Ajustez la largeur au contenu */
+    margin: 160px auto 0; /* Centrez le contenu verticalement, ajustez la marge en haut */
     padding: 19px;
-
     background-color: #F3D7DF;
     border-style: inset;
     border-radius: 20px;
+    box-sizing: border-box; /* Ajoutez la boîte pour que les rembourrages et les bordures ne dépassent pas la largeur */
+    text-align: center; /* Centrez le contenu horizontalement */
+}
+
+/* Media query pour les écrans plus petits (par exemple, smartphones) */
+@media (max-width: 768px) {
+    .res {
+        width: 90%; /* Ajustez la largeur pour les écrans plus petits */
+        margin-left: auto;
+        margin-right: auto; /* Centrez le contenu horizontalement */
+    }
 }

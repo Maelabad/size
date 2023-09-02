@@ -12,72 +12,66 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
-    align-items: center;
     background-color: #000;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Pour centrer verticalement */
     height: 100vh;
 }
 
-.nav{
+.nav {
     background-color: black;
     height: 60px;
     width: 100%;
-    font-color: white;
+    color: white; /* Utilisez "color" au lieu de "font-color" */
     margin-top: 0px;
 }
 
-.corps{
+.corps {
     background-color: #A0C3F5;
-    margin-top: 50px;
+    margin-top: 20px; /* Réduit la marge pour les écrans plus petits */
+    padding: 10px; /* Réduit la marge intérieure */
 }
 
-.intro{
+.intro {
     margin-top: 10px;
     padding: 15px;
     text-align: center;
 }
 
-.menu{
+.menu {
     border-radius: 20px;
     box-sizing: border-box;
     padding: 20px;
-    width: 1050px;
+    max-width: 100%; /* Ajuste la largeur au contenu */
     display: flex;
-
-
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: space-between;
+    flex-wrap: wrap; /* Permet à ses éléments de passer à la ligne sur les écrans étroits */
+    justify-content: space-around; /* Distribue les éléments de manière égale */
 }
 
-.pant{
-    margin-left: 10px;
-    margin-right: 20px;
-
-    width: 275px;
+.pant, .tee, .chaus {
+    margin: 10px;
+    width: calc(33.33% - 20px); /* Utilise calc pour gérer l'espacement entre les éléments */
+    max-width: 275px; /* Limite la largeur maximale */
+    text-align: center;
 }
 
-.tee{
-    margin-left: 20px;
-    margin-right: 10px;
-
-    width: 275px;
+img {
+    max-width: 100%; /* Pour s'adapter à la largeur du conteneur parent */
+    height: auto; /* Maintient le rapport hauteur/largeur d'origine */
 }
 
-.chaus{
-    margin-left: 20px;
-    margin-right: 10px;
-    width: 275px;
+/* Media query pour les écrans plus petits (par exemple, smartphones) */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column; /* Empile les éléments les uns sur les autres */
+        align-items: center; /* Centre horizontalement */
+    }
+
+    .pant, .tee, .chaus {
+        width: 100%; /* Occupe toute la largeur */
+        margin: 10px 0; /* Espacement supérieur et inférieur */
+        max-width: none; /* Supprime la largeur maximale */
+    }
 }
-
-img{
-    height: 200px;
-    width: 250px;
-}
-
-
-
-
-
