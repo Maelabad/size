@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+body{
+    background-image: url("../images/background2.png");
+}
+
+.navig{
+    background-color: black;
+    height: 60px;
+    width: 100%;
+    font-color: white;
+    margin-top: 0px;
+}
+
+.res{
+    height: 170px;
+    width: 600px;
+    margin-top: 160px;
+    align-items: center;
+    margin-left: 250px;
+    padding: 19px;
+
+    background-color: #F3D7DF;
+    border-style: inset;
+    border-radius: 20px;
+}
